@@ -1,0 +1,42 @@
+package com.system.controller;
+
+import com.system.entity.Feedback;
+import com.system.service.FeedbackService;
+import org.apache.coyote.Response;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/feedbacks")
+public class FeedbackController
+{
+    //inject service in this controller
+    @Autowired
+    private FeedbackService feedbackService;
+
+    //Add /post data
+    @PostMapping("/addData")
+    public ResponseEntity<String> addData(@RequestBody Feedback feedback){
+        feedbackService.saveFeedback(feedback);
+        return new ResponseEntity<>("Feedback added", HttpStatus.CREATED);
+    }
+
+    //get all data
+    @GetMapping("/getAllData")
+    public ResponseEntity<List<Feedback>> getallData(){
+        List<Feedback> feedbackList = feedbackService.getAllFeedbacks();
+        return new ResponseEntity<>(feedbackList,HttpStatus.OK);
+    }
+
+    //get data by id
+    @GetMapping("/getDataById/{id}")
+    public ResponseEntity<Feedback> getDatabyId(@PathVariable("id") int id){
+        Feedback feedbackById = feedbackService.getFeedbackById(id);
+        return  new ResponseEntity<>(feedbackById,HttpStatus.OK);
+
+    }
+}
