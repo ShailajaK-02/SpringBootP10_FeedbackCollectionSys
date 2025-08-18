@@ -32,4 +32,20 @@ public class FeedbackServiceImpl implements FeedbackService
         Feedback feedbackById = repository.findById(id).orElseThrow(()->new NullPointerException("Data not found"+id));
         return feedbackById;
     }
+
+    @Override
+    public String deleteFeedback(int id) {
+        repository.deleteById(id);
+        return "Feedback deleted";
+    }
+
+    @Override
+    public Feedback updateFeedB(int id, Feedback newFeedB) {
+        Feedback feedback = repository.findById(id).orElseThrow(()->new NullPointerException("Data deleted"));
+
+        feedback.setRatings(newFeedB.getRatings());
+
+        Feedback updatedFeedback = repository.save(feedback);
+        return updatedFeedback;
+    }
 }
