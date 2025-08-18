@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface FeedbackService
 {
+    //save method added
     String saveFeedback(Feedback feedback);
 
     List<Feedback> getAllFeedbacks();
