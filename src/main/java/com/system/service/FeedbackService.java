@@ -11,4 +11,8 @@ public interface FeedbackService
     List<Feedback> getAllFeedbacks();
 
     Feedback getFeedbackById(int id);
+
+    String deleteFeedback(int id);
+
+    Feedback updateFeedB(int id, Feedback newFeedB);
 }
