@@ -15,6 +15,7 @@ public class FeedbackServiceImpl implements FeedbackService
     @Autowired
     private FeedabckRepository repository;
 
+    //save method implemented
     @Override
     public String saveFeedback(Feedback feedback) {
         repository.save(feedback);
