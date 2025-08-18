@@ -9,6 +9,7 @@ public interface FeedbackService
     //save method added
     String saveFeedback(Feedback feedback);
 
+    //getall method added
     List<Feedback> getAllFeedbacks();
 
     Feedback getFeedbackById(int id);
