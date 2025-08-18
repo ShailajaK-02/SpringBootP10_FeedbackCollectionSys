@@ -37,6 +37,19 @@ public class FeedbackController
     public ResponseEntity<Feedback> getDatabyId(@PathVariable("id") int id){
         Feedback feedbackById = feedbackService.getFeedbackById(id);
         return  new ResponseEntity<>(feedbackById,HttpStatus.OK);
+    }
 
+    //delete
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deletebyid(@PathVariable("id") int id){
+        feedbackService.deleteFeedback(id);
+        return new ResponseEntity<>("Deleted",HttpStatus.OK);
+    }
+
+    //update
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Feedback> updateData(@PathVariable("id") int id, @RequestBody Feedback feed){
+        Feedback updatedFeedB = feedbackService.updateFeedB(id,feed);
+        return new ResponseEntity<>(updatedFeedB,HttpStatus.OK);
     }
 }
