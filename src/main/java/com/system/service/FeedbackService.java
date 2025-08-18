@@ -12,6 +12,7 @@ public interface FeedbackService
     //getall method added
     List<Feedback> getAllFeedbacks();
 
+    //getbyid method added
     Feedback getFeedbackById(int id);
 
     String deleteFeedback(int id);
