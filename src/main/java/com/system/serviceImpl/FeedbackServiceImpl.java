@@ -22,6 +22,7 @@ public class FeedbackServiceImpl implements FeedbackService
         return "Feedback saved";
     }
 
+    //getalldata method implemented
     @Override
     public List<Feedback> getAllFeedbacks() {
         List<Feedback> feedbackList = repository.findAll();
