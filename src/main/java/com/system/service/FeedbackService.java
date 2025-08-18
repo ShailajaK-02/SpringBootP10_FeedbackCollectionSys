@@ -15,6 +15,7 @@ public interface FeedbackService
     //getbyid method added
     Feedback getFeedbackById(int id);
 
+    //delete method added
     String deleteFeedback(int id);
 
     Feedback updateFeedB(int id, Feedback newFeedB);
