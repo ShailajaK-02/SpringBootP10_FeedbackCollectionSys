@@ -18,5 +18,6 @@ public interface FeedbackService
     //delete method added
     String deleteFeedback(int id);
 
+    //update method added
     Feedback updateFeedB(int id, Feedback newFeedB);
 }
