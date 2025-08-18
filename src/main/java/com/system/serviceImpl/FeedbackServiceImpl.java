@@ -29,6 +29,7 @@ public class FeedbackServiceImpl implements FeedbackService
         return feedbackList;
     }
 
+    //getbyid method implemented
     @Override
     public Feedback getFeedbackById(int id) {
         Feedback feedbackById = repository.findById(id).orElseThrow(()->new NullPointerException("Data not found"+id));
