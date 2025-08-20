@@ -32,7 +32,7 @@ public class FeedbackController
         return new ResponseEntity<>(feedbackList,HttpStatus.OK);
     }
 
-    //get data by id
+    //get data by id api added
     @GetMapping("/getDataById/{id}")
     public ResponseEntity<Feedback> getDatabyId(@PathVariable("id") int id){
         Feedback feedbackById = feedbackService.getFeedbackById(id);
