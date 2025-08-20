@@ -46,7 +46,7 @@ public class FeedbackController
         return new ResponseEntity<>("Deleted",HttpStatus.OK);
     }
 
-    //update
+    //update api added
     @PutMapping("/update/{id}")
     public ResponseEntity<Feedback> updateData(@PathVariable("id") int id, @RequestBody Feedback feed){
         Feedback updatedFeedB = feedbackService.updateFeedB(id,feed);
