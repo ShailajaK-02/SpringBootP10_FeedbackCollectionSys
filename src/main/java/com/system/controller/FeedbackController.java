@@ -25,7 +25,7 @@ public class FeedbackController
         return new ResponseEntity<>("Feedback added", HttpStatus.CREATED);
     }
 
-    //get all data
+    //get all data api added
     @GetMapping("/getAllData")
     public ResponseEntity<List<Feedback>> getallData(){
         List<Feedback> feedbackList = feedbackService.getAllFeedbacks();
