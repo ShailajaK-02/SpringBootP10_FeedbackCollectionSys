@@ -18,7 +18,7 @@ public class FeedbackController
     @Autowired
     private FeedbackService feedbackService;
 
-    //Add /post data
+    //Add api added
     @PostMapping("/addData")
     public ResponseEntity<String> addData(@RequestBody Feedback feedback){
         feedbackService.saveFeedback(feedback);
