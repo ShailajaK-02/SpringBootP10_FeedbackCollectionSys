@@ -39,7 +39,7 @@ public class FeedbackController
         return  new ResponseEntity<>(feedbackById,HttpStatus.OK);
     }
 
-    //delete
+    //delete api added
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deletebyid(@PathVariable("id") int id){
         feedbackService.deleteFeedback(id);
