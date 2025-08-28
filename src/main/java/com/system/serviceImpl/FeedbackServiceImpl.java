@@ -43,7 +43,7 @@ public class FeedbackServiceImpl implements FeedbackService
         return "Feedback deleted";
     }
 
-    //update method implemented
+    //update implemented
     @Override
     public Feedback updateFeedB(int id, Feedback newFeedB) {
         Feedback feedback = repository.findById(id).orElseThrow(()->new NullPointerException("Data deleted"));
